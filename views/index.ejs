@@ -1,0 +1,25 @@
+<%- include ('partials/header.ejs') %>
+<body>
+    <%- include ('partials/navbar.ejs') %>
+    <div class="container mb-5 mt-5">
+        <hr>
+        <h1>Perguntas</h1>
+        <hr>
+        <a href="/perguntar" class="btn btn-primary">Perguntar</a>
+        <hr>
+        <% perguntas.forEach(perguntas => { %>
+
+            <div class="card mt-lg-5">
+                <div class="card-body">
+                    <h3> <%= perguntas.titulo %> </h3>
+                </div>
+                <div class="card-footer">
+                    <a href="/pergunta/<%= perguntas.id %>"><button class="btn btn-primary" href="">Responder</button></a>
+                </div>
+            </div>
+
+        <% }) %>
+    </div>
+
+</body>
+<%- include ('partials/footer.ejs') %>
